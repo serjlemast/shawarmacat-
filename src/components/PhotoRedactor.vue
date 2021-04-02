@@ -60,7 +60,18 @@
               :max="imgSizes.maxHeight"
             >
           </label>
+          <label>
+            rotatin: {{ imgRotations.currentRotation }}
+            <input
+              type="range"
+              :value="imgRotations.currentRotation"
+              @input="imgRotations.currentRotation = $event.target.value"
+              :min="imgRotations.minRotation"
+              :max="imgRotations.maxRotation"
+            >
+          </label>
         </div>
+        
 
         <button v-if="isCatVisible" @click="isCatVisible = !isCatVisible">
           Cпрятать
@@ -89,6 +100,11 @@ export default {
         maxHeight: 480,
         currentWidth: 680,
         currentHeight: 480,
+      },
+       imgRotations:{
+        maxRotation:360,
+        minRotation:0,
+        currentRotation:0
       }
     }
   },
@@ -96,7 +112,8 @@ export default {
     imgStyles() {
       return {
         width: `${this.imgSizes.currentWidth}px`,
-        height: `${this.imgSizes.currentHeight}px`
+        height: `${this.imgSizes.currentHeight}px`,
+        transform: `rotate(${this.imgRotations.currentRotation}deg)`
       }
     }
   }
