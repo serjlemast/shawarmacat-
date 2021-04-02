@@ -55,8 +55,11 @@
           </label>
         </div>
 
-        <button @click="isCatVisible = !isCatVisible">
-          Показать / спрятать
+        <button v-if="isCatVisible" @click="isCatVisible = !isCatVisible">
+          Cпрятать
+        </button>
+        <button v-else @click="isCatVisible = !isCatVisible">
+          pokazat
         </button>
       </div>
     </div>
