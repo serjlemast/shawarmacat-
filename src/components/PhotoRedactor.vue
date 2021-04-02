@@ -29,6 +29,13 @@
           >
             Рамка
           </button>
+          <button
+            type="button"
+            :class="imgFilters.shadow ? 'active' : ''"
+            @click="imgFilters.shadow = !imgFilters.shadow"
+          >
+            Shadow
+          </button>
         </div>
 
         <h2>Размер</h2>
@@ -74,7 +81,8 @@ export default {
       isCatVisible: true,
       imgFilters: {
         sepia: false,
-        border: false
+        border: false,
+        shadow: false
       },
       imgSizes: {
         maxWidth: 680,
@@ -117,6 +125,9 @@ export default {
     }
     &.small {
       width: 400px;
+    }
+    &.shadow{
+      box-shadow: 0px 0px 15px black;
     }
   }
   button {
