@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "node-sass": "^5.0.0",
+    "sass": "^1.32.8",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -31,8 +33,7 @@
     ],
     "parserOptions": {
       "parser": "babel-eslint"
-    },
-    "rules": {}
+    }
   },
   "browserslist": [
     "> 1%",
